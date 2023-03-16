@@ -12,8 +12,8 @@ class Graph:
         self.heuristic[u].append(v)
         
     def aStarSearch(self, startPoint, endPoint):
-		# flag to determine if the path could be found or not
-		# also to determine if loop happens
+        # flag to determine if the path could be found or not
+        # also to determine if loop happens
         flag = 0
         currentCity = startPoint
         visited = set()
@@ -23,24 +23,27 @@ class Graph:
         cityOrder.append(currentCity)
         
         while(True):
+            tempCity = currentCity
             currentValue = 20000
             if (currentCity == endPoint):
                 flag = 0
                 break
             else:
-                if currentCity in self.graph:
+                if tempCity in self.graph:
                     for city in self.graph[currentCity]:
                         destination = city[0]
                         dist = city[1]
                         heuristic = self.heuristic[destination][0]
                         res = dist + heuristic
                         if res <= currentValue:
-                            currentCity = destination
+                            tempCity = destination
                             currentValue = res
                 else:
                     flag = 2
                     break
 
+            currentCity = tempCity
+            
             if currentCity in visited:
                 flag = 1
                 break
@@ -55,11 +58,14 @@ class Graph:
             for city in cityOrder:
                 print(city, end="->")
                 
-            print(currentCity + "...\n")
+            print(currentCity + "->...\n")
         elif (flag == 0):
             print("Jalur ditemukan:\n")
-            for city in cityOrder:
-                print(city, end="->")
+            for i in range(len(cityOrder)):
+                if i < (len(cityOrder) - 1):
+                    print(cityOrder[i], end="->")
+                else:
+                    print(cityOrder[i])
 
 # Main function start here
 g = Graph()
@@ -122,7 +128,7 @@ g.addEdge("Lamongan", "Bojonegoro", 42)
 g.addEdge("Lamongan", "Gresik",     14)
 
 g.addEdge("Gresik", "Lamongan",     14)
-g.addEdge("Gresik", "Surababaya",   12)
+g.addEdge("Gresik", "Surabaya",     12)
 
 g.addEdge("Sidoarjo", "Surabaya",       25)
 g.addEdge("Sidoarjo", "Probolinggo",    78)
@@ -144,4 +150,4 @@ g.addEdge("Pamekasan", "Sampang",   31)
 g.addEdge("Sumenep", "Pamekasan",   54)
 
 # searching start here
-g.aStarSearch("Magetan", "Surabaya")
+g.aStarSearch("Ngawi", "Surabaya")

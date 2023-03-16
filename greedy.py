@@ -4,13 +4,13 @@ from collections import defaultdict
 class Graph:
     def __init__(self):
         self.graph = defaultdict(list)
-        self.heurisctic = defaultdict(list)
+        self.heuristic = defaultdict(list)
         
     def addEdge(self, u, v):
         self.graph[u].append(v)
     
     def addHeuristic(self, u, v):
-        self.heurisctic[u].append(v)
+        self.heuristic[u].append(v)
 
     def greedyBestFirstSearch(self, startPoint, endPoint):
         # flag to check the search result
@@ -27,26 +27,30 @@ class Graph:
         
         while(True):
             currentHeuristic = 1000
-            if (currentCity != endPoint): # check if current node visited is the end point
+            tempCity = currentCity
+            if (currentCity == endPoint):
+                flag = 0
+                break
+            else:
                 if currentCity in self.graph: # check if current node has edge 
                     for city in self.graph[currentCity]:
-                        if self.heurisctic[city][0] <= currentHeuristic:
-                            currentHeuristic = self.heurisctic[city][0]
-                            currentCity = city
+                        cityHeuristic = self.heuristic[city][0]
+                        if cityHeuristic <= currentHeuristic:
+                            currentHeuristic = self.heuristic[city][0]
+                            tempCity = city
                 else:
                     flag = 2
                     break
-            elif (currentCity == endPoint):
-                flag = 0
-                break
+
+            currentCity = tempCity
             
             if currentCity in visited:
                 flag = 1
                 break
-
+            
             visited.add(currentCity)
             cityOrder.append(currentCity)
-            
+
         if (flag == 2): 
             print("Jalur menuju kota tujuan tidak ditemukan\n")
         elif (flag == 1):
@@ -57,9 +61,12 @@ class Graph:
             print(currentCity + "...\n")
         elif (flag == 0):
             print("Jalur ditemukan:\n")
-            for city in cityOrder:
-                print(city, end="->")
-			
+            for i in range(len(cityOrder)):
+                if i < len(cityOrder) - 1:
+                    print(cityOrder[i], end="->")
+                else:
+                    print(cityOrder[i])
+    
 # Main function start here
 g = Graph()
 
@@ -121,7 +128,7 @@ g.addEdge("Lamongan", "Bojonegoro")
 g.addEdge("Lamongan", "Gresik")
 
 g.addEdge("Gresik", "Lamongan")
-g.addEdge("Gresik", "Surababaya")
+g.addEdge("Gresik", "Surabaya")
 
 g.addEdge("Sidoarjo", "Surabaya")
 g.addEdge("Sidoarjo", "Probolinggo")
@@ -143,4 +150,4 @@ g.addEdge("Pamekasan", "Sampang")
 g.addEdge("Sumenep", "Pamekasan")
 
 # searching start here
-g.greedyBestFirstSearch("Magetan", "Surabaya")
+g.greedyBestFirstSearch("Ngawi", "Surabaya")
