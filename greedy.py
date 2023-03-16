@@ -34,7 +34,7 @@ class Graph:
                             currentHeuristic = self.heurisctic[city][0]
                             currentCity = city
                 else:
-                    flag = 0
+                    flag = 2
                     break
             elif (currentCity == endPoint):
                 flag = 0
@@ -47,7 +47,7 @@ class Graph:
             visited.add(currentCity)
             cityOrder.append(currentCity)
             
-        if (flag == 2): # this means loop happens, or no edge connected to endPoint
+        if (flag == 2): 
             print("Jalur menuju kota tujuan tidak ditemukan\n")
         elif (flag == 1):
             print("Terjadi loop pada saat pencarian:\n")
@@ -61,7 +61,7 @@ class Graph:
                 print(city, end="->")
 			
 # Main function start here
-g= Graph()
+g = Graph()
 
 # add heuristic
 g.addHeuristic("Magetan", 162)
@@ -142,4 +142,5 @@ g.addEdge("Pamekasan", "Sampang")
 
 g.addEdge("Sumenep", "Pamekasan")
 
+# searching start here
 g.greedyBestFirstSearch("Magetan", "Surabaya")
