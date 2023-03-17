@@ -3,7 +3,7 @@
 ![Screenshot from 2023-03-17 04-59-10](https://user-images.githubusercontent.com/92865110/225761813-a15b0b44-35f3-4bb6-89e8-db61659ba34a.png)
 
 ## Implementasi
-1. Greedy Best-First Search
+1. Greedy Best\-First Search
 2. A\* Search
 
 ## Analisis Algoritma
