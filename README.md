@@ -4,7 +4,7 @@
 
 ## Implementasi
 1. Greedy Best-First Search
-2. A* Search
+2. A\* Search
 
 ## Analisis Algoritma
 <img width="3072" alt="Informed Search - KB Kelompok Agfi" src="https://user-images.githubusercontent.com/92865110/225768657-8e56bfe2-5d6f-4d52-a00a-8e1f6ecc5c47.png">
