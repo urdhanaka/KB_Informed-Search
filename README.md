@@ -15,3 +15,12 @@ Greedy Best First Search :
 
 A\* Search :
 > f(n) = g(n) + h(n)
+
+Hasil Algoritma A* Search :
+Ngawi -> Surabaya
+```
+Jalur ditemukan:
+
+Ngawi->Bojonegoro->Lamongan->Gresik->Surabaya
+Total distance traveled: 299
+```
