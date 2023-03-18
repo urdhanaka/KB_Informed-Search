@@ -17,7 +17,8 @@ class Graph:
         flag = 0
         currentCity = startPoint
         visited = set()
-        cityOrder = list()
+        cityOrder = []
+        distance = 0
         
         visited.add(currentCity)
         cityOrder.append(currentCity)
@@ -38,6 +39,7 @@ class Graph:
                         if res <= currentValue:
                             tempCity = destination
                             currentValue = res
+                            distance += dist
                 else:
                     flag = 2
                     break
@@ -66,6 +68,7 @@ class Graph:
                     print(cityOrder[i], end="->")
                 else:
                     print(cityOrder[i])
+            print(f"Total distance traveled: {distance}")
 
 # Main function start here
 g = Graph()
