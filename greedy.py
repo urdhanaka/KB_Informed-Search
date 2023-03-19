@@ -1,14 +1,15 @@
-# import llibrary
+# import library
 from collections import defaultdict
+
 
 class Graph:
     def __init__(self):
         self.graph = defaultdict(list)
         self.heuristic = defaultdict(list)
-        
+
     def addEdge(self, u, v):
         self.graph[u].append(v)
-    
+
     def addHeuristic(self, u, v):
         self.heuristic[u].append(v)
 
@@ -16,57 +17,68 @@ class Graph:
         # flag to check the search result
         # 0 = success to find the path to end point
         # 1 = loop happens
-        # 2 = can't find the path to end point 
+        # 2 = can't find the path to end point
         flag = 0
         currentCity = startPoint
         visited = set()
         cityOrder = list()
+        distance = 0
 
         visited.add(startPoint)
         cityOrder.append(startPoint)
-        
-        while(True):
+
+        while True:
             currentHeuristic = 1000
             tempCity = currentCity
-            if (currentCity == endPoint):
+            if currentCity == endPoint:
                 flag = 0
                 break
             else:
-                if currentCity in self.graph: # check if current node has edge 
+                if currentCity in self.graph:  # check if current node has edge
+
+                    distTotal = 0
+
                     for city in self.graph[currentCity]:
                         cityHeuristic = self.heuristic[city][0]
                         if cityHeuristic <= currentHeuristic:
                             currentHeuristic = self.heuristic[city][0]
                             tempCity = city
+
                 else:
                     flag = 2
                     break
 
             currentCity = tempCity
-            
+
             if currentCity in visited:
                 flag = 1
                 break
-            
+
             visited.add(currentCity)
             cityOrder.append(currentCity)
 
-        if (flag == 2): 
+        for city in cityOrder:
+            distance += self.heuristic[city][0]
+
+        if flag == 2:
             print("Jalur menuju kota tujuan tidak ditemukan\n")
-        elif (flag == 1):
+        elif flag == 1:
             print("Terjadi loop pada saat pencarian:\n")
             for city in cityOrder:
                 print(city, end="->")
-                
+
             print(currentCity + "...\n")
-        elif (flag == 0):
+        elif flag == 0:
             print("Jalur ditemukan:\n")
             for i in range(len(cityOrder)):
                 if i < len(cityOrder) - 1:
                     print(cityOrder[i], end="->")
                 else:
                     print(cityOrder[i])
-    
+
+            print("Jarak total: " + str(distance) + " km\n")
+
+
 # Main function start here
 g = Graph()
 
@@ -150,4 +162,4 @@ g.addEdge("Pamekasan", "Sampang")
 g.addEdge("Sumenep", "Pamekasan")
 
 # searching start here
-g.greedyBestFirstSearch("Ngawi", "Surabaya")
+g.greedyBestFirstSearch("Magetan", "Surabaya")
