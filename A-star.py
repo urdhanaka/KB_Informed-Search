@@ -155,4 +155,4 @@ g.addEdge("Pamekasan", "Sampang",   31)
 g.addEdge("Sumenep", "Pamekasan",   54)
 
 # searching start here
-g.aStarSearch("Ngawi", "Surabaya")
+g.aStarSearch("Magetan", "Surabaya")
