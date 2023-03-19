@@ -22,5 +22,5 @@ Ngawi -> Surabaya
 Jalur ditemukan:
 
 Ngawi->Bojonegoro->Lamongan->Gresik->Surabaya
-Total distance traveled: 299
+Total distance traveled: 112
 ```
