@@ -17,10 +17,10 @@ A\* Search :
 > f(n) = g(n) + h(n)
 
 Hasil Algoritma A* Search :
-Ngawi -> Surabaya
+Magetan -> Surabaya
 ```
 Jalur ditemukan:
 
-Ngawi->Bojonegoro->Lamongan->Gresik->Surabaya
-Total distance traveled: 112
+Magetan->Madiun->Nganjuk->Jombang->Surabaya
+Total distance traveled: 182
 ```
