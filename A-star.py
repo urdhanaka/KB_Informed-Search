@@ -31,6 +31,7 @@ class Graph:
                 break
             else:
                 if tempCity in self.graph:
+                    distTotal = 0
                     for city in self.graph[currentCity]:
                         destination = city[0]
                         dist = city[1]
@@ -39,7 +40,8 @@ class Graph:
                         if res <= currentValue:
                             tempCity = destination
                             currentValue = res
-                            distance += dist
+                            distTotal = dist
+                    distance += distTotal
                 else:
                     flag = 2
                     break
