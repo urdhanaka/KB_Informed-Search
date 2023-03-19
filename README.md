@@ -24,3 +24,12 @@ Jalur ditemukan:
 Magetan->Madiun->Nganjuk->Jombang->Surabaya
 Total distance traveled: 182
 ```
+
+Hasil Algoritma Greedy : 
+Magetan -> Surabaya
+
+```
+Jalur ditemukan:
+Magetan->Madiun->Nganjuk->Jombang->Surabaya
+Jarak total: 394 km
+```
