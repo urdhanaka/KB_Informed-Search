@@ -9,12 +9,18 @@
 ## Analisis Algoritma
 <img width="3072" alt="Informed Search - KB Kelompok Agfi" src="https://user-images.githubusercontent.com/92865110/225768657-8e56bfe2-5d6f-4d52-a00a-8e1f6ecc5c47.png">
  Baik algoritma Greedy Best-First Search (GBFS) maupun algoritma A* umumnya digunakan untuk menemukan jalur terpendek dalam sistem berbasis grafik atau grid. Namun, ada beberapa perbedaan utama antara kedua pendekatan tersebut. Perbandingan fungsinya adalah sebagai berikut
+<br/>
+<br/>
 
 Greedy Best First Search :
 > f(n) = g(n)
 
+
+
 A\* Search :
 > f(n) = g(n) + h(n)
+
+<br/>
 
 - GBFS adalah algoritma yang selalu memilih jalur yang tampaknya paling dekat dengan tujuan, berdasarkan beberapa fungsi heuristik yang memperkirakan jarak yang tersisa dari simpul saat ini ke tujuan. Itu tidak mempertimbangkan jarak total yang ditempuh untuk mencapai simpul saat ini. Hal ini dapat menghasilkan solusi yang kurang optimal jika fungsi heuristik tidak akurat, karena dapat memilih jalur yang terlihat lebih dekat ke tujuan tetapi membutuhkan jarak yang lebih jauh untuk mencapainya.
 
