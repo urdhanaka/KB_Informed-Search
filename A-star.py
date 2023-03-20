@@ -4,13 +4,13 @@ class Graph:
     def __init__(self):
         self.graph = defaultdict(list)
         self.heuristic = defaultdict(list)
-        
+
     def addEdge(self, u, v, dist):
         self.graph[u].append([v, dist])
-    
+
     def addHeuristic(self, u, v):
         self.heuristic[u].append(v)
-        
+
     def aStarSearch(self, startPoint, endPoint):
         # flag to determine if the path could be found or not
         # also to determine if loop happens
@@ -19,10 +19,10 @@ class Graph:
         visited = set()
         cityOrder = []
         distance = 0
-        
+
         visited.add(currentCity)
         cityOrder.append(currentCity)
-        
+
         while(True):
             tempCity = currentCity
             currentValue = 20000
@@ -47,21 +47,21 @@ class Graph:
                     break
 
             currentCity = tempCity
-            
+
             if currentCity in visited:
                 flag = 1
                 break
-            
+
             visited.add(currentCity)
             cityOrder.append(currentCity)
 
-        if (flag == 2): 
+        if (flag == 2):
             print("Jalur menuju kota tujuan tidak ditemukan\n")
         elif (flag == 1):
             print("Terjadi loop pada saat pencarian:\n")
             for city in cityOrder:
                 print(city, end="->")
-                
+
             print(currentCity + "->...\n")
         elif (flag == 0):
             print("Jalur ditemukan:\n")

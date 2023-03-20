@@ -1,7 +1,6 @@
 # import library
 from collections import defaultdict
 
-
 class Graph:
     def __init__(self):
         self.graph = defaultdict(list)
@@ -28,26 +27,20 @@ class Graph:
         cityOrder.append(startPoint)
 
         while True:
-            currentHeuristic = 1000
+            currentHeuristic = 200
             tempCity = currentCity
             if currentCity == endPoint:
                 flag = 0
                 break
             else:
                 if currentCity in self.graph:  # check if current node has edge
-
-                    distTotal = 0
-
                     for city in self.graph[currentCity]:
-                        cityHeuristic = self.heuristic[city][0]
-                        if cityHeuristic <= currentHeuristic:
+                        if self.heuristic[city][0] <= currentHeuristic:
                             currentHeuristic = self.heuristic[city][0]
                             tempCity = city
-
                 else:
                     flag = 2
                     break
-
             currentCity = tempCity
 
             if currentCity in visited:
