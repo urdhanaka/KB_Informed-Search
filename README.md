@@ -26,6 +26,13 @@ A\* Search :
 
 - A* adalah algoritma pencarian jarak terpendek yang mempertimbangkan estimasi jarak tersisa ke tujuan dan jarak sebenarnya yang ditempuh untuk mencapai simpul saat ini. Ia menggunakan kombinasi fungsi heuristik dan jarak total yang ditempuh sejauh ini (juga dikenal sebagai biaya/cost) untuk memilih node berikutnya yang akan dijelajahi. Ini memastikan bahwa A* selalu memilih jalur yang paling menjanjikan ke tujuan, dengan mempertimbangkan perkiraan jarak yang tersisa dan jarak sebenarnya yang ditempuh.
 
+Dengan nilai heuristik h(x) adalah jarak garis lurus ke Surabaya yang berarti kota tujuan adalah Kota Surabaya. Kita anggap Magetan adalah kota awal.
+
+- Dengan GBFS, kota yang terhubung dengan Magetan adalah Ngawi dengan nilai h(x) = 130, Madiun dengan nilai h(x) = 126 dan Ponorogo dengan nilai h(x) = 128. Dari ketiga kota tersebut, kota dengan nilai h(x) paling kecil adalah Madiun. Sehingga kota yang di tempuh selanjutnya adalah kota Madiun. Kemudian dilakukan pencarian kota dengan nilai h(x) paling kecil yang terhubung dengan kota Madiun. Begitu seterusnya hingga tercapai kota tujuan atau terjadi *loop.*
+
+- Algoritma A* hampir sama dengan GBFS, namun pencarian kota selanjutnya juga melibatkan jarak ke kota selanjutnya. Menggunakan contoh kota Magetan, nilai f(n) dari Ngawi adalah 32 (jarak ke kota Magetan) ditambah dengan heuristik dari kota Magetan, yaitu 130. Sehingga nilai f(n) dari Ngawi adalah 130 + 32 = 162. Nilai f(n) dari Madiun adalah 148 dan nilai f(n) dari Ponorogo adalah 162. Dari ketiga kota tersebut diambil kota dengan nilai f(n) paling kecil, yaitu kota Madiun. Begitu seterusnya hingga tercapai kota tujuan atau terjadi *loop.*
+
+
 Dalam hal efisiensi, A* bisa lebih tidak efisien secara komputasi daripada GBFS, karena memerlukan penghitungan fungsi heuristik dan biaya untuk setiap node. Namun, A* lebih cenderung menemukan solusi optimal, sementara GBFS mungkin mengembalikan solusi kurang optimal dalam beberapa kasus.
 
 Secara keseluruhan, pilihan antara GBFS dan A* bergantung pada masalah khusus yang dipecahkan dan syarat yang dibutuhkan. Jika masalah memerlukan pencarian solusi optimal dan fungsi heuristik akurat, A* adalah pilihan yang lebih baik. Namun, jika efisiensi komputasi menjadi prioritas dan solusi perkiraan yang kurang optimal dapat diterima, GBFS mungkin lebih tepat.
