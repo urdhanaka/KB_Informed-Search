@@ -36,7 +36,7 @@ class Graph:
                         destination = city[0]
                         dist = city[1]
                         heuristic = self.heuristic[destination][0]
-                        res = dist + heuristic
+                        res = distance + dist + heuristic
                         if res <= currentValue:
                             tempCity = destination
                             currentValue = res
