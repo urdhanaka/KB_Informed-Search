@@ -38,11 +38,15 @@ class Graph:
                         dist = city[1]
                         heuristic = self.heuristic[destination][0]
                         res = distance + dist + heuristic
+                        print("heuristic: ", heuristic, "| destination", destination, "| res: ", res)
                         if res <= currentValue:
                             tempCity = destination
                             currentValue = res
                             distTotal = dist
                     distance += distTotal
+                    print("currentCity: ", currentCity, "| tempCity: ", tempCity, "| distance: ", distance)
+                    print("distTotal: ", distTotal, "| currentValue: ", currentValue)
+                    print("\n")
                 else:
                     flag = 2
                     break
