@@ -7,7 +7,13 @@
 2. A\* Search
 
 ## Analisis Algoritma
-<img width="3072" alt="Informed Search - KB Kelompok Agfi" src="https://user-images.githubusercontent.com/92865110/225768657-8e56bfe2-5d6f-4d52-a00a-8e1f6ecc5c47.png">
+
+### Greedy-Best Search Tree
+<img width="1472" alt="Informed Search - KB Kelompok Agfi (2)" src="https://user-images.githubusercontent.com/92865110/230703503-51615be6-90cb-4609-a863-8853be2920e2.png">
+
+### A* Search Tree
+<img width="3168" alt="Informed Search - KB Kelompok Agfi (3)" src="https://user-images.githubusercontent.com/92865110/230703522-54f0f2de-a6e1-491f-8baf-f3f3e09b716c.png">
+
  Baik algoritma Greedy Best-First Search (GBFS) maupun algoritma A* umumnya digunakan untuk menemukan jalur terpendek dalam sistem berbasis grafik atau grid. Namun, ada beberapa perbedaan utama antara kedua pendekatan tersebut. Perbandingan fungsinya adalah sebagai berikut
 <br/>
 <br/>
